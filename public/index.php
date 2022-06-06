@@ -1,13 +1,11 @@
 <?php
 //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
 
-
-require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createMutable(dirname(__DIR__));
-$dotenv->load();
-
-echo "hi";
+//include_once '../Sterategy/Strategy.php';
 
 
 
+require_once '../Sterategy/ShoppingCart.php';
+$cart = new ShoppingCart(10000);
+$cart->payAmount();
 

@@ -8,7 +8,7 @@
  */
 namespace App\Observer;
 
-class Service
+class Service implements IObserver
 {
     protected $name;
     protected $prierity;
@@ -17,5 +17,10 @@ class Service
     {
         $this->name = $name;
         $this->prierity = $prierity;
+    }
+
+    public function update(IObserverbale $observerbale)
+    {
+        print_r("{$this->name} : {$observerbale->getEvent()} <br>");
     }
 }

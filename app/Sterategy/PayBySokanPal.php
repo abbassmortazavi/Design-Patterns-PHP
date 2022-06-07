@@ -8,6 +8,8 @@
  */
 
 
+namespace Sterategy;
+
 require_once 'PayStrategy.php';
 
 class PayBySokanPal implements PayStrategy

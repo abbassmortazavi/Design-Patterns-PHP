@@ -12,5 +12,7 @@ namespace App\Observer;
 
 interface IObserverbale
 {
-
+    public function register(IObserver $observer);
+    public function unregister(IObserver $observer);
+    public function notify();
 }

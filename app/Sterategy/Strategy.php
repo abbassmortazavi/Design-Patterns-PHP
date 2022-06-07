@@ -7,8 +7,11 @@
  * Date:     2022/06/06
  */
 
-interface GateWay{
+namespace Sterategy;
+interface GateWay
+{
     public function setInfo($info);
+
     public function pay();
 }
 
@@ -50,10 +53,12 @@ class Payment
     {
         $this->gateWay = $gateWay;
     }
+
     public function addInfo($info)
     {
         $this->gateWay->setInfo($info);
     }
+
     public function pay()
     {
         return $this->gateWay->pay();
@@ -63,5 +68,5 @@ class Payment
 $payment = new Payment();
 
 $payment->setGateWay(new Mellat());
-$payment->addInfo(['name'=>'Abbass','price'=>90000]);
+$payment->addInfo(['name' => 'Abbass', 'price' => 90000]);
 var_dump($payment->pay());

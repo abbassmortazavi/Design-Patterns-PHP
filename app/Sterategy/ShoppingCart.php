@@ -8,6 +8,8 @@
  */
 
 
+namespace Sterategy;
+
 require_once 'PayByPayPal.php';
 require_once 'PayByCC.php';
 require_once 'PayBySokanPal.php';
@@ -35,7 +37,7 @@ class ShoppingCart
     public function payAmount()
     {
         $message = match ($this->amount) {
-            $this->amount >1000000  => new PayBySokanPal(),
+            $this->amount > 1000000 => new PayBySokanPal(),
             $this->amount >= 500000 => new PayByCC(),
             default => new PayByPayPal(),
         };
